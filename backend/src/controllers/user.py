@@ -1,4 +1,4 @@
-from backend.src.db_config import engine
+from ..db_config import engine
 
 
 def update_user(username, email, first_name, last_name, passwd):
