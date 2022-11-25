@@ -1,5 +1,19 @@
 from backend.src.db_config import engine
 
+
+def update_user(username, email, first_name, last_name, passwd):
+    query = """UPDATE users 
+                SET username='%s', email='%s', first_name='%s', last_name='%s', passwd='%s'
+                WHERE username = '%s' AND passwd = '%s';""" % (username, email, first_name, last_name, passwd, username, passwd)
+
+    try:
+        engine.execute(query)
+        return {'username': username, 'email': email, 'password': passwd, 'first_name': first_name,
+                'last_name': last_name}
+    except Exception as e:
+        return str(e)
+
+
 def login_user(username, passwd):
     query = "SELECT * FROM users WHERE username = '%s' AND passwd = '%s';" % (username, passwd)
     records = engine.execute(query)
@@ -18,5 +32,14 @@ def register_user(username, passwd, email, first_name, last_name):
     try:
         engine.execute(query)
         return {'username': username, 'email': email, 'password': passwd, 'first_name': first_name, 'last_name': last_name}
+    except Exception as e:
+        return str(e)
+
+
+def delete_user(username, passwd):
+    query = """DELETE FROM users WHERE username='%s' AND passwd='%s';""" % (username, passwd)
+    try:
+        engine.execute(query)
+        return {'message': 'User successfully deleted.', 'username': username, 'password': passwd}
     except Exception as e:
         return str(e)
