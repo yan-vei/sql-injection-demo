@@ -35,7 +35,6 @@ def register_user(username, passwd, email, first_name, last_name):
     except Exception as e:
         return str(e)
 
-
 def delete_user(username, passwd):
     query = """DELETE FROM users WHERE username='%s' AND passwd='%s';""" % (username, passwd)
     try:
