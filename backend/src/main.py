@@ -8,7 +8,7 @@ app = Flask(__name__)
 CORS(app)
 
 
-@app.route("/login", methods=['POST'])
+@app.route("/login")
 def login():
   username = request.args.get('username')
   password = request.args.get('password')
@@ -20,7 +20,7 @@ def login():
       return make_response(jsonify({"message":"User does not exist."}), 400)
 
 
-@app.route("/delete-account", methods=['POST'])
+@app.route("/delete-account", methods=['DELETE'])
 def delete_account():
   username = request.args.get('username')
   password = request.args.get('password')
@@ -32,7 +32,7 @@ def delete_account():
       return make_response(jsonify(deleted_user), 200)
 
 
-@app.route("/update-account", methods=['POST'])
+@app.route("/update-account", methods=['PATCH'])
 def update_account():
     data = request.get_json()
     username = data['username']
@@ -50,17 +50,18 @@ def update_account():
 
 @app.route("/register", methods=['POST'])
 def register():
-  username = request.args.get('username')
-  password = request.args.get('password')
-  first_name = request.args.get('first_name')
-  last_name = request.args.get('last_name')
-  email = request.args.get('email')
-  registered_user = user.register_user(username, password, email, first_name, last_name)
+    data = request.get_json()
+    username = data['username']
+    password = data['password']
+    first_name = data['first_name']
+    last_name = data['last_name']
+    email = data['email']
+    registered_user = user.register_user(username, password, email, first_name, last_name)
 
-  if 'email' not in registered_user:
-      return make_response(jsonify({"message": registered_user}), 400)
-  else:
-      return make_response(jsonify(registered_user), 200)
+    if 'email' not in registered_user:
+        return make_response(jsonify({"message": registered_user}), 400)
+    else:
+        return make_response(jsonify(registered_user), 200)
 
 
 if __name__ == '__main__':
