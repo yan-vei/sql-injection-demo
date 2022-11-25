@@ -14,4 +14,9 @@ export class UserService {
     let url: string = `${API_URL}/login?username=${username}&password=${password}`
     return this.http.get<any>(url);
   }
+
+  registerUser(data: any): Observable<any> {
+    let url: string = `${API_URL}/register`
+    return this.http.post<any>(url, data);
+  }
 }
