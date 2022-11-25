@@ -4,8 +4,7 @@ This is a sample Flask web application with the UI in Angular that demonstrates 
 # Backend  
 To run the API of the application, firstly make sure that you have pip installed.  
 Also make sure you have the database running. Since the SQL dump is not provided, 
-create a DB using Docker container or PostgresAdmin with the credentials that are  
-provided in db_config.py.
+create a DB using Docker container or PostgresAdmin with the credentials that are provided in db_config.py.
 Then:  
 $: pip install -r requirements.txt  
 $: cd backend  
