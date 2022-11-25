@@ -12,4 +12,12 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  isLoggedIn() {
+    return localStorage.getItem('logged_in');
+  }
+
+  logout() {
+    localStorage.clear();
+  }
+
 }

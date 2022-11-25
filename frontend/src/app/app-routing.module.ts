@@ -12,9 +12,9 @@ const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'secret', component: SecretDataComponent},
-  {path: 'delete-profile', component: DeleteProfileComponent},
-  {path: 'update-profile', component: UpdateProfileComponent}
+  {path: 'secret', component: SecretDataComponent, canActivate: [LoggedInService]},
+  {path: 'delete-profile', component: DeleteProfileComponent, canActivate: [LoggedInService]},
+  {path: 'update-profile', component: UpdateProfileComponent, canActivate: [LoggedInService]}
 ];
 
 @NgModule({

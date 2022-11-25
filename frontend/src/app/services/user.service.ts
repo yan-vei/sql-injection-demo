@@ -19,4 +19,14 @@ export class UserService {
     let url: string = `${API_URL}/register`
     return this.http.post<any>(url, data);
   }
+
+  deleteUser(username: string, password: string): Observable<any> {
+    let url: string = `${API_URL}/delete-account?username=${username}&password=${password}`
+    return this.http.delete<any>(url);
+  }
+
+  updateUser(data: any): Observable<any> {
+    let url: string = `${API_URL}/update-account`
+    return this.http.patch<any>(url, data);
+  }
 }

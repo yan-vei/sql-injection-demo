@@ -1,1 +1,42 @@
-<p>update-profile works!</p>
+<div>
+  <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+
+    <div style="margin:10px;">
+      <label for="email">
+        Email
+      </label>
+      <input id="email" type="text" formControlName="email">
+    </div>
+
+    <div style="margin:10px;">
+      <label for="firstName">
+        First name
+      </label>
+      <input id="firstName" type="text" formControlName="firstName">
+    </div>
+
+    <div style="margin:10px;">
+      <label for="lastName">
+        Last name
+      </label>
+      <input id="lastName" type="text" formControlName="lastName">
+    </div>
+
+    <div style="margin:10px;">
+      <label for="username">
+        Username
+      </label>
+      <input id="username" type="text" formControlName="username">
+    </div>
+
+    <div style="margin:10px;">
+      <label for="password">
+        Password
+      </label>
+      <input id="password" type="password" formControlName="password">
+    </div>
+
+    <button class="button" type="submit">Update Profile</button>
+
+  </form>
+</div>

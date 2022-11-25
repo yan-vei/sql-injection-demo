@@ -10,6 +10,7 @@ import { SecretDataComponent } from './components/secret-data/secret-data.compon
 import { DeleteProfileComponent } from './components/delete-profile/delete-profile.component';
 import { UpdateProfileComponent } from './components/update-profile/update-profile.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoggedInService } from './services/logged-in-service.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [LoggedInService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
