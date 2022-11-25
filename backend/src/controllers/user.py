@@ -20,7 +20,7 @@ def login_user(username, passwd):
     users = []
     if records:
         for record in records:
-            users.append({'id': record[0], 'email': record[1], 'username': record[2], 'first_name': record[3], 'last_name': record[4], 'password': record[5], 'is_admin': record[6]})
+            users.append({'is_logged': True, 'id': record[0], 'email': record[1], 'username': record[2], 'first_name': record[3], 'last_name': record[4], 'password': record[5], 'is_admin': record[6]})
         return users
     else:
         return None
