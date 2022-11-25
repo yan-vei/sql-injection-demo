@@ -20,6 +20,33 @@ def login():
       return make_response(jsonify({"message":"User does not exist."}), 400)
 
 
+@app.route("/delete-account", methods=['POST'])
+def delete_account():
+  username = request.args.get('username')
+  password = request.args.get('password')
+  deleted_user = user.delete_user(username, password)
+
+  if 'username' not in deleted_user:
+      return make_response(jsonify({"message": deleted_user}), 400)
+  else:
+      return make_response(jsonify(deleted_user), 200)
+
+
+@app.route("/update-account", methods=['POST'])
+def update_account():
+    data = request.get_json()
+    username = data['username']
+    password = data['password']
+    first_name = data['first_name']
+    last_name = data['last_name']
+    email = data['email']
+    updated_user = user.update_user(username, password, email, first_name, last_name)
+
+    if 'email' not in updated_user:
+        return make_response(jsonify({"message": updated_user}), 400)
+    else:
+        return make_response(jsonify(updated_user), 200)
+
 
 @app.route("/register", methods=['POST'])
 def register():
