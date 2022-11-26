@@ -19,6 +19,8 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=sq1-injection-dem0
       - POSTGRES_DB=sql-injection-demo
+    volumes:
+      - pg-data:/var/lib/postgresql/data
     ports:
       - 5432:5432
     networks:
@@ -40,3 +42,6 @@ services:
 networks:
   api-db:
     driver: bridge
+
+volumes:
+  pg-data:
