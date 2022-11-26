@@ -33,17 +33,23 @@ python script.py
 ```  
 
 ## Available routes  
-There are several routes available for you to play around with.
+There are several routes available for you to play around with.  
+  
 ⋅⋅* /  
 The home page of the application.  
+  
 ⋅⋅* /login  
 Login form of the application.  
+  
 ⋅⋅* /register  
 Registration form of the application.  
+  
 ⋅⋅* /update-profile  
 Update form of the application.  
+  
 ⋅⋅* /delete-profile  
 Delete form of the application.  
+  
 ⋅⋅* /secret  
 Secret page available only to the logged in users.  
 
