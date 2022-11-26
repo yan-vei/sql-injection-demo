@@ -30,4 +30,22 @@ cd backend
 pip install requirements.txt
 cd ../script
 python script.py
-```
+```  
+
+## Available routes  
+There are several routes available for you to play around with.
+⋅⋅* /
+The home page of the application.
+⋅⋅* /login
+Login form of the application.
+⋅⋅* /register
+Registration form of the application.
+⋅⋅* /update-profile
+Update form of the application.
+⋅⋅* /delete-profile
+Delete form of the application.
+⋅⋅* /secret
+Secret page available only to the logged in users.
+
+## Postman collection
+If you want to play around with the API only, you can run the Postman collection with some samples of data and SQL queries already available for you. The postman collection is available in the root directory, and you can export it in Postman if you have it installed. Don't forget to start the Docker containers first.  
