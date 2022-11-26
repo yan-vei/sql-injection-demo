@@ -37,6 +37,8 @@ for url in urls:
             loginField.send_keys(login)
             passwordField.send_keys(passwords[index])
 
+    time.sleep(10)
+
     submitButton = driver.find_element(By.TAG_NAME, 'button')
     submitButton.click()
 
