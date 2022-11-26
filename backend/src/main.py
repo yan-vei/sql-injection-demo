@@ -1,7 +1,7 @@
 from flask import Flask, request, make_response, jsonify
-from src.db_config import engine
+from db_config import engine
 from flask_cors import CORS
-from src.controllers import user
+from controllers import user
 
 
 app = Flask(__name__)

@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
       {
         console.log(data);
         localStorage.setItem('logged_in', 'true');
-        this.router.navigate(['/']);
+        this.router.navigate(['/update-profile']);
       }
     )
   }
