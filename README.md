@@ -1,21 +1,21 @@
-# SQL Injection Demo - Team 4  
+# SQL Injection Playground
 This is a sample Flask web application with the UI in Angular that demonstrates how an SQL injection can be achieved.  
 
-# Backend  
-To run the API of the application, firstly make sure that you have pip installed.  
-Also make sure you have the database running. Since the SQL dump is not provided, 
-create a DB using Docker container or PostgresAdmin with the credentials that are provided in db_config.py.  
-Then:  
-$: pip install -r requirements.txt  
-$: cd backend  
-$: pipenv shell  
-$: python -m src.main  
+This application was developed for the INF370 course at the American University in Bulgaria.
 
-# Frontend  
-To run the UI of the application, firstly make sure that you have npm installed.  
-Then:  
-$: cd frontend  
-$: npm install  
-$: npm start  
+Team 4:  
+Belgisa Hajna  
+Martin Minchev  
+Andrea Minxa  
+Yana Veitsman  
 
-Access both services on your local machine.  
+## Contents of the repository  
+The current repository contains the backend, the frontend, and the Selenium script. The script is run separately from the other contents.
+
+## How to run the playground
+To run the playground locally, make sure you have Docker installed. 
+
+Navigated to the root folder of the application and run the following command:
+```
+docker-compose up build
+```
